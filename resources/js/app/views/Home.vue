@@ -1,3 +1,5 @@
 <template>
-    <div>tottoototo</div>
+    <div>TOTOTOTO</div>
 </template>
+
+<script src='./home.js' />
