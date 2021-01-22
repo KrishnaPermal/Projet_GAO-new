@@ -5,19 +5,25 @@ export default {
     components: {
         Computers,
     },
-    data() {
-        return {
-            computers: [],
-            dialog: false,
-        }
-    },
+
+    data: () => ({
+        computers: [],
+        dialog: false,
+    
+    }),
+
+
     created() {
-        this.initialize()
-        
+        this.computerDisplay();  
     },
     methods: {
-        initialize() {
-
+        computerDisplay() {
+            Axios.get("/api/computer").then(({ data }) => {
+                data.data.forEach((_data) => {
+                    this.computers.push(_data);
+                });
+            });
         },
-    }
+    },
+
 }

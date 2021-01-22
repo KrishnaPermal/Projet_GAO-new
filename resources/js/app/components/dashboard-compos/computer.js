@@ -1,4 +1,3 @@
-
 export default {
 
     props: {
@@ -15,12 +14,20 @@ export default {
         }
     },
 
+    data() {
+        return {
+            computers: {},
+        }
+
+    },
+
     created() {
         this.initialize();
     },
 
     methods: {
-        
-
+        initialize() {
+            this.computer
+        }
     }
 }
