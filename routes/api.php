@@ -20,5 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/computer',[ComputersController::class,'getComputers']);
 
+Route::post('/',[ComputersController::class,'addComputer']);
 
 /*******************************************************/

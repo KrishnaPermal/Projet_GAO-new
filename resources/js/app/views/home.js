@@ -1,14 +1,17 @@
 import Computers from '../components/dashboard-compos/Computers.vue';
+import AddComputer from '../components/dashboard-compos/AddComputer.vue';
 import Axios from "axios"
 
 export default {
     components: {
         Computers,
+        AddComputer,
     },
 
     data: () => ({
         computers: [],
         dialog: false,
+        name: '',
     
     }),
 
@@ -24,6 +27,8 @@ export default {
                 });
             });
         },
+
+
     },
 
 }
