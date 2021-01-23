@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ComputersSeeder extends Seeder
+class CustomersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,27 +17,32 @@ class ComputersSeeder extends Seeder
         $array = [
             [
                 'id' => 1,
-                'name' => 'PC1',
+                'name' => 'Roque',
+                'firstname' => 'Jean Lou'
             ],
             [
                 'id' => 2,
-                'name' => 'PC2',
+                'name' => 'Gros',
+                'firstname' => 'Benzi'
             ],
             [
                 'id' => 3,
-                'name' => 'PC3',
+                'name' => 'Kiki',
+                'firstname' => 'Krish'
             ],
             [
                 'id' => 4,
-                'name' => 'PC4',
+                'name' => 'Ti',
+                'firstname' => 'Colin'
             ],
             [
                 'id' => 5,
-                'name' => 'PC5',
+                'name' => 'Spider',
+                'firstname' => 'Matt'
             ],
         ];
 
-        DB::table('computers')->insert(
+        DB::table('customers')->insert(
             $array
         );
     }
