@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ComputersResource extends JsonResource
+class CustomersResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,10 @@ class ComputersResource extends JsonResource
      */
     public function toArray($request)
     {
-        $attributions = AttributionsResource::collection($this->attributions);
         return [
-            'id' =>$this->id,
-            'name' =>$this->name,
-            'attributions' => $attributions,
+            'id' => $this->id,
+            'name' => $this->name,
+            'firstname' => $this->firstname,
         ];
     }
 }

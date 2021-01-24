@@ -11,7 +11,7 @@ export default {
 
   methods: {
     addComputer() {
-      Axios.post('api', {name: this.name}).then(({response}) => {
+      Axios.post('api/computers/add', {name: this.name}).then(({response}) => {
         this.$emit('sendComputer', response.data.data)
         //this.dialog = false;
       })

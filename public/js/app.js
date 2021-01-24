@@ -1922,7 +1922,7 @@ __webpack_require__.r(__webpack_exports__);
     addComputer: function addComputer() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api', {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('api/computers/add', {
         name: this.name
       }).then(function (_ref) {
         var response = _ref.response;
@@ -2010,7 +2010,7 @@ __webpack_require__.r(__webpack_exports__);
     computerDisplay: function computerDisplay() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/computer").then(function (_ref) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/computers/get').then(function (_ref) {
         var data = _ref.data;
         data.data.forEach(function (_data) {
           _this.computers.push(_data);

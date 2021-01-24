@@ -12,4 +12,9 @@ class ComputersModel extends Model
     protected $table = 'computers';
     protected $fillable = ['name'];
     public $timestamps =false;
+
+    public function attributions()
+    {
+        return $this->hasMany(AttributionsModel::class, 'id_computers');
+    }
 }

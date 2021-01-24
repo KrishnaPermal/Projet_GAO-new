@@ -17,9 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 /**********Permet de Récupérer les ordinateurs**********/
 
+Route::prefix('computers')->group(function () {
+    Route::get('/get', [ComputersController::class, 'getComputers']);
+    Route::post('/add', [ComputersController::class, 'addComputer']);
+});
 
-Route::get('/computer',[ComputersController::class,'getComputers']);
 
-Route::post('/',[ComputersController::class,'addComputer']);
+
+/*******************************************************/
+
+/********************Les Attributions********************/
+
+Route::prefix('attributions')->group(function () {
+Route::get('/get/{id}', [ComputersController::class, 'getAttributions'])->where('id', '[0-9]+');
+});
+
+
 
 /*******************************************************/

@@ -16,10 +16,10 @@ class CreateAttributionsTable extends Migration
         Schema::create('attributions', function (Blueprint $table) {
             $table->id();
             $table->string('timetable')->nullable();
-            $table->bigInteger('id_customer')->unsigned();
-            $table->bigInteger('id_computer')->unsigned();
-            $table->foreign('id_customer')->references('id')->on('customers');
-            $table->foreign('id_computer')->references('id')->on('computers');
+            $table->bigInteger('id_customers')->unsigned();
+            $table->bigInteger('id_computers')->unsigned();
+            $table->foreign('id_customers')->references('id')->on('customers');
+            $table->foreign('id_computers')->references('id')->on('computers');
             $table->timestamps();
         });
     }

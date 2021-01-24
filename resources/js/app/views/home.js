@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         computerDisplay() {
-            Axios.get("/api/computer").then(({ data }) => {
+            Axios.get('/api/computers/get').then(({ data }) => {
                 data.data.forEach((_data) => {
                     this.computers.push(_data);
                 });
