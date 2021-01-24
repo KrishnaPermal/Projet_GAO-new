@@ -1960,7 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      computers: {}
+      attributions: {}
     };
   },
   created: function created() {
@@ -1968,7 +1968,26 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     initialize: function initialize() {
-      this.computer;
+      var _this = this;
+
+      this.computer.attributions.forEach(function (attributions) {
+        _this.attributions[attributions.timetable] = {
+          id: attributions.id,
+          nom: attributions.customer.name,
+          prenom: attributions.customer.firstname
+        };
+      });
+      this.displayTimetable();
+    },
+    displayTimetable: function displayTimetable() {
+      this.timetables = [];
+
+      for (var i = 0; i < 10; i++) {
+        this.timetables.push({
+          index: i + 8,
+          attribution: typeof this.attributions[i + 8] !== 'undefined' ? this.attributions[i + 8] : false
+        });
+      }
     }
   }
 });
@@ -20448,9 +20467,59 @@ var render = function() {
                 "v-list-item-title",
                 { staticClass: "headline mb-1 text-center" },
                 [_vm._v("\n        " + _vm._s(_vm.computer.name) + "\n      ")]
-              )
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                [
+                  _c("v-col", { attrs: { md: "4" } }, [_vm._v("Heure")]),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { staticClass: "text-center", attrs: { md: "4" } },
+                    [_vm._v("Nom")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { staticClass: "text-right", attrs: { md: "4" } },
+                    [_vm._v("Actions")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.timetables, function(timetable, i) {
+                return _c(
+                  "div",
+                  { key: i },
+                  [
+                    _c(
+                      "v-row",
+                      [
+                        _c("v-col", { attrs: { md: "2" } }, [
+                          _vm._v(" " + _vm._s(timetable.index))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-col",
+                          { staticClass: "text-center", attrs: { md: "8" } },
+                          [
+                            _vm._v(
+                              " \n            " +
+                                _vm._s(timetable.attribution.name)
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              })
             ],
-            1
+            2
           )
         ],
         1
