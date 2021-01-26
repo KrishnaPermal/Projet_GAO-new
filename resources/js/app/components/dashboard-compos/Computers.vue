@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="500" outlined>
+  <v-card class="mx-auto" max-width="500" outlined color="cyan lighten-4">
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="headline mb-1 text-center">
@@ -14,8 +14,17 @@
         <div v-for="(timetable, i) in timetables" :key="i">
           <v-row>
             <v-col md="2"> {{ timetable.index }}</v-col>
-            <v-col md="8" class="text-center"> 
-              {{ timetable.attribution.name }}</v-col>
+            <v-col md="8" class="text-center">
+              {{ timetable.attribution.name }}</v-col
+            >
+            <v-col md="2" v-if="!timetable.attribution">
+              <addAttribution
+                :dated="dated"
+                :timetable="timetable.index"
+                :computer="computer"
+                @addAttribution="updateAttribution($event)"
+               />
+            </v-col>
           </v-row>
         </div>
       </v-list-item-content>

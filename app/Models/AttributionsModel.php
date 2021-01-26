@@ -9,7 +9,7 @@ class AttributionsModel extends Model
 {
     use HasFactory;
     protected $table = 'attributions';
-    protected $fillable = ['id', 'timetable', 'id_computers', 'id_customers'];
+    protected $fillable = ['id', 'timetable', 'dated', 'id_computers', 'id_customers'];
     public $timestamps = false;
 
     public function customer()

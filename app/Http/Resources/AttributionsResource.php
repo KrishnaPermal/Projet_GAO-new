@@ -20,6 +20,7 @@ class AttributionsResource extends JsonResource
             'id' => $this->id,
             'timetable' => $this->timetable,
             'name' => $this->name,
+            'dated' => $this->dated,
             'customer' => $customer,
         ];
     }

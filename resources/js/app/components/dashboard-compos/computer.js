@@ -1,4 +1,10 @@
+import AddAttribution from './AddAttribution.vue';
+
 export default {
+
+    components: {
+        AddAttribution,
+    },
 
     props: {
         computer: {
@@ -6,6 +12,11 @@ export default {
                 return {}
             },
         },
+        dated: {
+            default: function () {
+                return {}
+            },
+        }
     },
 
     watch: {
@@ -17,6 +28,7 @@ export default {
     data() {
         return {
             attributions: {},
+            timetables: []
         }
 
     },
@@ -45,6 +57,11 @@ export default {
                     attribution: (typeof this.attributions[i + 8] !== 'undefined') ? this.attributions[i + 8] : false
                 })
             }
+        },
+
+        updateAttribution(attribution) {
+            this.computer.attributions.push(attribution)
+            this.initialize();
         },
     }
 }

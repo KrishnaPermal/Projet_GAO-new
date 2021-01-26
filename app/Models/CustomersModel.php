@@ -9,6 +9,6 @@ class CustomersModel extends Model
 {
     use HasFactory;
     protected $table = "customers";
-    protected $fillable = ['name','firstname',];
+    protected $fillable = ['name','firstname'];
     public $timestamps = false;
 }
