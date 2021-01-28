@@ -6,7 +6,6 @@
           <v-list-item-title class="headline mb-1 text-center">
             {{ computer.name }}
           </v-list-item-title>
-
           <v-row dense class="justify-center">
             <v-col md="4" class="text-center">Heure</v-col>
             <v-col md="4" class="text-center">Nom</v-col>

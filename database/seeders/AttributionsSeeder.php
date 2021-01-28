@@ -40,7 +40,7 @@ class AttributionsSeeder extends Seeder
                 'dated' => '2021-01-22',
             ],
             [
-                'id_customers' => 3,
+                'id_customers' => 5,
                 'id_computers' => 5,
                 'timetable' => '14',
                 'dated' => '2021-01-21',

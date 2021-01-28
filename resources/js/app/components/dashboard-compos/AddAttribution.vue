@@ -11,7 +11,7 @@
           <span class="headline grey lighten-2">Ajouter un utilisateur</span>
         </v-card-title>
         <v-card-text>
-          <v-container>
+          <v-container fluid>
             <v-row>
               <v-col cols="12" sm="6" md="4">
                 <v-autocomplete

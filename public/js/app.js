@@ -2173,13 +2173,10 @@ __webpack_require__.r(__webpack_exports__);
       dated: new Date().toISOString().substr(0, 10),
       pagination: {
         page: 1,
-        visible: 6,
+        visible: 3,
         pageCount: 0
       }
     };
-  },
-  created: function created() {
-    this.initialize();
   },
   methods: {
     initialize: function initialize() {
@@ -20568,6 +20565,7 @@ var render = function() {
                 [
                   _c(
                     "v-container",
+                    { attrs: { fluid: "" } },
                     [
                       _c(
                         "v-row",

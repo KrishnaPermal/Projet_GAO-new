@@ -18,15 +18,13 @@ export default {
             dated: new Date().toISOString().substr(0, 10),
             pagination: {
                 page: 1,
-                visible: 6,
+                visible: 3,
                 pageCount: 0
             },
         }
     },
 
-    created() {
-        this.initialize();
-    },
+    
     methods: {
         initialize() {
             this.requestGet(1)
