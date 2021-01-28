@@ -72,7 +72,7 @@ export default {
                     this.$emit("addAttribution", data.data);
                     this.text = "Le client a été ajouter au poste";
                     this.dialog = false;
-                    console.log(customer);
+                    //console.log(this.select.id);
                 });
         }
     }

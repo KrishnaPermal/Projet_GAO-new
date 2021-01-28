@@ -19,7 +19,7 @@ class AttributionsResource extends JsonResource
         return [
             'id' => $this->id,
             'timetable' => $this->timetable,
-            'name' => $this->name,
+            //'name' => $this->name,
             'dated' => $this->dated,
             'customer' => $customer,
         ];

@@ -40,11 +40,12 @@ export default {
             this.computer.attributions.forEach(attributions => {
                 this.attributions[attributions.timetable] = {
                     id: attributions.id,
-                    nom: attributions.customer.name,
-                    prenom: attributions.customer.firstname
+                    name: attributions.customer.name,
+                    firstname: attributions.customer.firstname
                 };
             });
             this.displayTimetable();
+            console.log(this.timetables);
         },
 
         displayTimetable() {
@@ -56,13 +57,13 @@ export default {
                         typeof this.attributions[i + 8] !== "undefined"
                             ? this.attributions[i + 8]
                             : false
-                });
+                })
             }
         },
 
         updateAttribution(attribution) {
             this.computer.attributions.push(attribution);
             this.initialize();
-        }
+        },
     }
 };

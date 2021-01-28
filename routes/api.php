@@ -32,6 +32,8 @@ Route::prefix('computers')->group(function () {
 
 /*******************************************************/
 
+
+
 /********************Les Attributions********************/
 
 Route::prefix('attributions')->group(function () {

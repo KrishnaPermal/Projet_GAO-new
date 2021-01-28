@@ -1981,8 +1981,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$emit("addAttribution", data.data);
 
         _this2.text = "Le client a été ajouter au poste";
-        _this2.dialog = false;
-        console.log(customer);
+        _this2.dialog = false; //console.log(this.select.id);
       });
     }
   }
@@ -2083,11 +2082,12 @@ __webpack_require__.r(__webpack_exports__);
       this.computer.attributions.forEach(function (attributions) {
         _this.attributions[attributions.timetable] = {
           id: attributions.id,
-          nom: attributions.customer.name,
-          prenom: attributions.customer.firstname
+          name: attributions.customer.name,
+          firstname: attributions.customer.firstname
         };
       });
       this.displayTimetable();
+      console.log(this.timetables);
     },
     displayTimetable: function displayTimetable() {
       this.timetables = [];
@@ -20913,127 +20913,99 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { attrs: { fluid: "" } },
+    "v-card",
+    {
+      staticClass: "mx-auto",
+      attrs: { "max-width": "500", outlined: "", color: "cyan lighten-4" }
+    },
     [
       _c(
-        "v-card",
-        {
-          staticClass: "mx-auto",
-          attrs: { "max-width": "500", outlined: "", color: "cyan lighten-4" }
-        },
+        "v-list-item",
+        { attrs: { "three-line": "" } },
         [
           _c(
-            "v-list-item",
-            { attrs: { "three-line": "" } },
+            "v-list-item-content",
             [
               _c(
-                "v-list-item-content",
+                "v-list-item-title",
+                { staticClass: "headline mb-1 text-center" },
+                [_vm._v("\n        " + _vm._s(_vm.computer.name) + "\n      ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
                 [
+                  _c("v-col", { attrs: { md: "4" } }, [_vm._v("Heure")]),
+                  _vm._v(" "),
                   _c(
-                    "v-list-item-title",
-                    { staticClass: "headline mb-1 text-center" },
-                    [
-                      _vm._v(
-                        "\n          " +
-                          _vm._s(_vm.computer.name) +
-                          "\n        "
-                      )
-                    ]
+                    "v-col",
+                    { staticClass: "text-center", attrs: { md: "4" } },
+                    [_vm._v("Nom")]
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-row",
-                    { staticClass: "justify-center", attrs: { dense: "" } },
-                    [
-                      _c(
-                        "v-col",
-                        { staticClass: "text-center", attrs: { md: "4" } },
-                        [_vm._v("Heure")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "text-center", attrs: { md: "4" } },
-                        [_vm._v("Nom")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "text-center", attrs: { md: "4" } },
-                        [_vm._v("Actions")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm._l(_vm.timetables, function(timetable, i) {
-                    return _c(
-                      "div",
-                      { key: i },
+                    "v-col",
+                    { staticClass: "text-right", attrs: { md: "4" } },
+                    [_vm._v("Actions")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.timetables, function(timetable, i) {
+                return _c(
+                  "div",
+                  { key: i },
+                  [
+                    _c(
+                      "v-row",
                       [
+                        _c("v-col", { attrs: { md: "2" } }, [
+                          _vm._v(" " + _vm._s(timetable.index))
+                        ]),
+                        _vm._v(" "),
                         _c(
-                          "v-row",
+                          "v-col",
+                          { staticClass: "text-center", attrs: { md: "8" } },
                           [
-                            _c(
+                            _vm._v(
+                              "\n            " +
+                                _vm._s(timetable.attribution.name) +
+                                "\n          "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        !timetable.attribution
+                          ? _c(
                               "v-col",
-                              {
-                                staticClass: "text-center",
-                                attrs: { md: "2" }
-                              },
-                              [_vm._v(" " + _vm._s(timetable.index))]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-col",
-                              {
-                                staticClass: "text-center",
-                                attrs: { md: "8" }
-                              },
+                              { attrs: { md: "2" } },
                               [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(timetable.attribution.name)
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            !timetable.attribution
-                              ? _c(
-                                  "v-col",
-                                  {
-                                    staticClass: "text-center",
-                                    attrs: { md: "2" }
+                                _c("addAttribution", {
+                                  attrs: {
+                                    dated: _vm.dated,
+                                    timetable: timetable.index,
+                                    computer: _vm.computer
                                   },
-                                  [
-                                    _c("addAttribution", {
-                                      attrs: {
-                                        dated: _vm.dated,
-                                        timetable: timetable.index,
-                                        computer: _vm.computer
-                                      },
-                                      on: {
-                                        addAttribution: function($event) {
-                                          return _vm.updateAttribution($event)
-                                        }
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        )
+                                  on: {
+                                    addAttribution: function($event) {
+                                      return _vm.updateAttribution($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          : _vm._e()
                       ],
                       1
                     )
-                  })
-                ],
-                2
-              )
+                  ],
+                  1
+                )
+              })
             ],
-            1
+            2
           )
         ],
         1
