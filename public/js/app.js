@@ -2095,7 +2095,7 @@ __webpack_require__.r(__webpack_exports__);
       for (var i = 0; i < 10; i++) {
         this.timetables.push({
           index: i + 8,
-          attribution: typeof this.attributions[i + 8] !== 'undefined' ? this.attributions[i + 8] : false
+          attribution: typeof this.attributions[i + 8] !== "undefined" ? this.attributions[i + 8] : false
         });
       }
     },
@@ -20915,98 +20915,127 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-card",
-    {
-      staticClass: "mx-auto",
-      attrs: { "max-width": "500", outlined: "", color: "cyan lighten-4" }
-    },
+    "v-container",
+    { attrs: { fluid: "" } },
     [
       _c(
-        "v-list-item",
-        { attrs: { "three-line": "" } },
+        "v-card",
+        {
+          staticClass: "mx-auto",
+          attrs: { "max-width": "500", outlined: "", color: "cyan lighten-4" }
+        },
         [
           _c(
-            "v-list-item-content",
+            "v-list-item",
+            { attrs: { "three-line": "" } },
             [
               _c(
-                "v-list-item-title",
-                { staticClass: "headline mb-1 text-center" },
-                [_vm._v("\n        " + _vm._s(_vm.computer.name) + "\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-row",
+                "v-list-item-content",
                 [
-                  _c("v-col", { attrs: { md: "4" } }, [_vm._v("Heure")]),
-                  _vm._v(" "),
                   _c(
-                    "v-col",
-                    { staticClass: "text-center", attrs: { md: "4" } },
-                    [_vm._v("Nom")]
+                    "v-list-item-title",
+                    { staticClass: "headline mb-1 text-center" },
+                    [
+                      _vm._v(
+                        "\n          " +
+                          _vm._s(_vm.computer.name) +
+                          "\n        "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-col",
-                    { staticClass: "text-right", attrs: { md: "4" } },
-                    [_vm._v("Actions")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm._l(_vm.timetables, function(timetable, i) {
-                return _c(
-                  "div",
-                  { key: i },
-                  [
-                    _c(
-                      "v-row",
+                    "v-row",
+                    { staticClass: "justify-center", attrs: { dense: "" } },
+                    [
+                      _c(
+                        "v-col",
+                        { staticClass: "text-center", attrs: { md: "4" } },
+                        [_vm._v("Heure")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { staticClass: "text-center", attrs: { md: "4" } },
+                        [_vm._v("Nom")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { staticClass: "text-center", attrs: { md: "4" } },
+                        [_vm._v("Actions")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.timetables, function(timetable, i) {
+                    return _c(
+                      "div",
+                      { key: i },
                       [
-                        _c("v-col", { attrs: { md: "2" } }, [
-                          _vm._v(" " + _vm._s(timetable.index))
-                        ]),
-                        _vm._v(" "),
                         _c(
-                          "v-col",
-                          { staticClass: "text-center", attrs: { md: "8" } },
+                          "v-row",
                           [
-                            _vm._v(
-                              "\n            " +
-                                _vm._s(timetable.attribution.name)
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        !timetable.attribution
-                          ? _c(
+                            _c(
                               "v-col",
-                              { attrs: { md: "2" } },
+                              {
+                                staticClass: "text-center",
+                                attrs: { md: "2" }
+                              },
+                              [_vm._v(" " + _vm._s(timetable.index))]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-col",
+                              {
+                                staticClass: "text-center",
+                                attrs: { md: "8" }
+                              },
                               [
-                                _c("addAttribution", {
-                                  attrs: {
-                                    dated: _vm.dated,
-                                    timetable: timetable.index,
-                                    computer: _vm.computer
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(timetable.attribution.name)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            !timetable.attribution
+                              ? _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text-center",
+                                    attrs: { md: "2" }
                                   },
-                                  on: {
-                                    addAttribution: function($event) {
-                                      return _vm.updateAttribution($event)
-                                    }
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          : _vm._e()
+                                  [
+                                    _c("addAttribution", {
+                                      attrs: {
+                                        dated: _vm.dated,
+                                        timetable: timetable.index,
+                                        computer: _vm.computer
+                                      },
+                                      on: {
+                                        addAttribution: function($event) {
+                                          return _vm.updateAttribution($event)
+                                        }
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          ],
+                          1
+                        )
                       ],
                       1
                     )
-                  ],
-                  1
-                )
-              })
+                  })
+                ],
+                2
+              )
             ],
-            2
+            1
           )
         ],
         1
@@ -21263,7 +21292,7 @@ var render = function() {
         _vm._l(_vm.computers, function(computer) {
           return _c(
             "v-col",
-            { key: computer.timetable, attrs: { md: "4" } },
+            { key: computer.timetable, attrs: { cols: "12", md: "4" } },
             [
               _c("Computers", {
                 attrs: { computer: computer, dated: _vm.dated }

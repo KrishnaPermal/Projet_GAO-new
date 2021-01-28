@@ -1,26 +1,25 @@
-import AddAttribution from './AddAttribution.vue';
+import AddAttribution from "./AddAttribution.vue";
 
 export default {
-
     components: {
-        AddAttribution,
+        AddAttribution
     },
 
     props: {
         computer: {
-            default: function () {
-                return {}
-            },
+            default: function() {
+                return {};
+            }
         },
         dated: {
-            default: function () {
-                return {}
-            },
+            default: function() {
+                return {};
+            }
         }
     },
 
     watch: {
-        computer: function () {
+        computer: function() {
             this.initialize();
         }
     },
@@ -29,8 +28,7 @@ export default {
         return {
             attributions: {},
             timetables: []
-        }
-
+        };
     },
 
     created() {
@@ -44,8 +42,8 @@ export default {
                     id: attributions.id,
                     nom: attributions.customer.name,
                     prenom: attributions.customer.firstname
-                }
-            })
+                };
+            });
             this.displayTimetable();
         },
 
@@ -54,14 +52,17 @@ export default {
             for (let i = 0; i < 10; i++) {
                 this.timetables.push({
                     index: i + 8,
-                    attribution: (typeof this.attributions[i + 8] !== 'undefined') ? this.attributions[i + 8] : false
-                })
+                    attribution:
+                        typeof this.attributions[i + 8] !== "undefined"
+                            ? this.attributions[i + 8]
+                            : false
+                });
             }
         },
 
         updateAttribution(attribution) {
-            this.computer.attributions.push(attribution)
+            this.computer.attributions.push(attribution);
             this.initialize();
-        },
+        }
     }
-}
+};

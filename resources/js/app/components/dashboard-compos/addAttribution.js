@@ -18,6 +18,7 @@ export default {
             }
         }
     },
+
     data() {
         return {
             snackbar: false,
@@ -42,35 +43,37 @@ export default {
             if (val && val.length >= 3) {
                 console.log(this.select);
                 this.loading = true;
-                
-                apiService.get("/api/customers/search", { query: val }).then(
-                    data => {
+
+                apiService
+                    .get("/api/customers/search", { query: val })
+                    .then(data => {
                         data.data.forEach(data => {
                             this.loading = false;
                             let NomPrenom = data.name + " " + data.firstname;
                             data.name = NomPrenom;
                             this.listCustomers.push(data);
                         });
-                    }
-                );
+                    });
             }
         }
     },
 
     methods: {
         addCustomer() {
-            apiService.post("api/attributions/add", {
-                id_customers: this.select.id,
-                id_computers: this.computer.id,
-                timetable: this.timetable,
-                dated: this.dated
-            }).then(({ data }) => {
-                this.snackbar = true;
-                this.$emit("addAttribution", data.data);
-                this.text = "Le client a été ajouter au poste";
-                this.dialog = false;
-                console.log(customer);
-            });
+            apiService
+                .post("api/attributions/add", {
+                    id_customers: this.select.id,
+                    id_computers: this.computer.id,
+                    timetable: this.timetable,
+                    dated: this.dated,
+                })
+                .then(({ data }) => {
+                    this.snackbar = true;
+                    this.$emit("addAttribution", data.data);
+                    this.text = "Le client a été ajouter au poste";
+                    this.dialog = false;
+                    console.log(customer);
+                });
         }
     }
 };

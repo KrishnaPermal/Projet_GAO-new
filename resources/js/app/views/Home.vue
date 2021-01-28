@@ -10,7 +10,7 @@
     </v-row>
 
     <v-row>
-      <v-col md="4" v-for="computer in computers" :key="computer.timetable">
+      <v-col cols="12" md="4" v-for="computer in computers" :key="computer.timetable">
         <Computers :computer="computer" :dated="dated" />
       </v-col>
     </v-row>
