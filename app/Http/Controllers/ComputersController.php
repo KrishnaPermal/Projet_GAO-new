@@ -87,4 +87,16 @@ class ComputersController extends Controller
 
         return new AttributionsResource($attribution);
     }
+
+    public function deleteComputer($id)
+    {
+        $computer = ComputersModel::where('id', $id)->delete();
+        return $computer;
+    }
+
+    public function deleteAttribution($id)
+    {
+        $attribution = AttributionsModel::where('id', $id)->delete();
+        return ['status' => $attribution];
+    }
 }

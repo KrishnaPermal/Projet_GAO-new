@@ -1,8 +1,5 @@
-//import { eventBus } from '../../eventBus.js';
 export default {
-    /*  components: {
-        eventBus,
-    }, */ 
+    
     data: () => ({
         dated: new Date().toISOString().substr(0, 10),
         menu: false,

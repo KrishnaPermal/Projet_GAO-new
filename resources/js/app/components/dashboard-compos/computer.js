@@ -1,8 +1,12 @@
 import AddAttribution from "./AddAttribution.vue";
+import DeleteAttribution from "./DeleteAttribution.vue";
+import DeleteComputer from "./DeleteComputer.vue";
 
 export default {
     components: {
-        AddAttribution
+        AddAttribution,
+        DeleteAttribution,
+        DeleteComputer,
     },
 
     props: {
@@ -45,7 +49,7 @@ export default {
                 };
             });
             this.displayTimetable();
-            console.log(this.timetables);
+            //console.log(this.timetables);
         },
 
         displayTimetable() {
@@ -65,5 +69,10 @@ export default {
             this.computer.attributions.push(attribution);
             this.initialize();
         },
+
+        deleteAttribution(timetable) {
+            _.unset(this.attributions, timetable);
+            this.displayTimetable();
+        }
     }
 };

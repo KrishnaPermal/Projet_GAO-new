@@ -2,6 +2,7 @@ import Computers from "../components/dashboard-compos/Computers.vue";
 import Datepicker from "../components/dashboard-compos/Datepicker.vue";
 import AddComputer from "../components/dashboard-compos/AddComputer.vue";
 import { apiService } from "../_services/api.services";
+import { EventBus } from "../_helpers/event.bus";
 
 export default {
     components: {
@@ -31,7 +32,12 @@ export default {
         },
         selectDate(computers) {
             this.requestGet(1)
-            this.dated = computers
+            this.dated = computers;
+
+            EventBus.$on('deleteComputer', (data) => {
+                const index = this.computers.indexOf(data);
+                this.computers.splice(index, 1)
+            })
         },
 
         requestGet(page) {

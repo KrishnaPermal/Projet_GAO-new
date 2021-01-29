@@ -26,6 +26,7 @@ Route::prefix('customers')->group(function () {
 Route::prefix('computers')->group(function () {
     Route::get('/get', [ComputersController::class, 'getComputers']);
     Route::post('/add', [ComputersController::class, 'addComputer']);
+    Route::post('/delete/{id}', [ComputersController::class, 'deleteComputer']);
 });
 
 
@@ -39,6 +40,7 @@ Route::prefix('computers')->group(function () {
 Route::prefix('attributions')->group(function () {
 Route::get('/get/{id}', [ComputersController::class, 'getAttributions'])->where('id', '[0-9]+');
 Route::post('/add', [ComputersController::class, 'addAttribution']);
+Route::post('/delete/{id}', [ComputersController::class, 'deleteAttribution']);
 });
 
 /*******************************************************/

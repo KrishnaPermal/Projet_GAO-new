@@ -4,6 +4,7 @@
       <v-list-item-content>
         <v-list-item-title class="headline mb-1 text-center">
           {{ computer.name }}
+          <deleteComputer :computer="computer" />
         </v-list-item-title>
         <v-row>
           <v-col md="4">Heure</v-col>
@@ -22,6 +23,14 @@
                 :timetable="timetable.index"
                 :computer="computer"
                 @addAttribution="updateAttribution($event)"
+              />
+            </v-col>
+            <v-col md="1" v-if="timetable.attribution">
+              <deleteAttribution
+                :computer="computer"
+                :attribution="timetable.attribution"
+                :timetable="timetable.index"
+                @deleteAttribution="deleteAttribution($event)"
               />
             </v-col>
           </v-row>
