@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ComputersSeeder::class,
             CustomersSeeder::class,
             AttributionsSeeder::class,
+            UsersSeeder::class,
         ]);
     }
 }
