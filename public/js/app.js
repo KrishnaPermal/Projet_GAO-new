@@ -2400,7 +2400,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.adminFooter[data-v-0e6e91d2] {\n  display: flex;\n  flex-flow: row;\n  justify-content: flex-end;\n  align-items: center;\n  background-color: brown;\n  height: 50px;\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n}\n.adminFooterTexte[data-v-0e6e91d2] {\n    position: relative;\n    right: 5%;\n}\n", ""]);
+exports.push([module.i, "\n.adminFooter[data-v-0e6e91d2] {\n  display: flex;\n  flex-flow: row;\n  justify-content: flex-end;\n  align-items: center;\n  background-color: brown;\n  height: 30px;\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n}\n.adminFooterTexte[data-v-0e6e91d2] {\n    position: relative;\n    right: 5%;\n}\n", ""]);
 
 // exports
 
@@ -21717,7 +21717,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "\n          Ceci est un gestionnaire d'attribution d'ordinateur pour chaque clients\n        "
+                    "\n          Ceci est un gestionnaire d'attribution d'ordinateur pour chaque\n          clients\n        "
                   )
                 ])
               ])
@@ -21767,6 +21767,24 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("v-pagination", {
+        attrs: {
+          length: _vm.pagination.pageCount,
+          color: "cyan lighten-2",
+          circle: ""
+        },
+        on: { input: _vm.requestGet },
+        model: {
+          value: _vm.pagination.page,
+          callback: function($$v) {
+            _vm.$set(_vm.pagination, "page", $$v)
+          },
+          expression: "pagination.page"
+        }
+      }),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c("v-divider"),
       _vm._v(" "),
       _c(
@@ -21786,23 +21804,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("v-divider"),
-      _vm._v(" "),
-      _c("v-pagination", {
-        attrs: {
-          length: _vm.pagination.pageCount,
-          color: "cyan lighten-2",
-          circle: ""
-        },
-        on: { input: _vm.requestGet },
-        model: {
-          value: _vm.pagination.page,
-          callback: function($$v) {
-            _vm.$set(_vm.pagination, "page", $$v)
-          },
-          expression: "pagination.page"
-        }
-      })
+      _c("v-divider")
     ],
     1
   )
