@@ -1,6 +1,6 @@
 <template>
-      <v-footer class="adminFooter cyan lighten-4 ">
-        <div class="adminFooterTexte">© PROJET_GAO 2021 </div>
+      <v-footer class="adminFooter cyan lighten-1 ">
+        <div class="adminFooterTexte">© G.A.O 2021 </div>
       </v-footer>
 </template>
 
