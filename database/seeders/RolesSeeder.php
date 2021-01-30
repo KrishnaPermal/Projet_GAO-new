@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UsersSeeder extends Seeder
+class RolesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,14 +17,11 @@ class UsersSeeder extends Seeder
         $array = [
             [
                 "id" => 1,
-                "name" => "Admin ADMIN",
-                "email" => "admin@admin.com",
-                "password" => bcrypt('admin'),
-                "id_role" => 1,
+                "name" => "Admin",
             ],
-            
         ];
-
-        DB::table('users')->insert($array);
+            DB::table('roles')->insert(
+                $array
+            );
     }
 }

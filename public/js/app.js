@@ -28334,8 +28334,6 @@ var render = function() {
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
-      _c("v-divider"),
-      _vm._v(" "),
       _c(
         "v-row",
         _vm._l(_vm.computers, function(computer) {
@@ -28351,9 +28349,7 @@ var render = function() {
           )
         }),
         1
-      ),
-      _vm._v(" "),
-      _c("v-divider")
+      )
     ],
     1
   )
@@ -88491,7 +88487,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "apiService", function() { return apiService; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
- //import { authenticationService } from './authentication.service';
+/* harmony import */ var _authentication_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./authentication.service */ "./resources/js/app/_services/authentication.service.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 var apiService = {
   get: function get(url) {
@@ -88499,8 +88502,8 @@ var apiService = {
     return axios__WEBPACK_IMPORTED_MODULE_0___default()({
       method: 'get',
       url: url,
-      params: data //headers: headers()
-
+      params: data,
+      headers: headers()
     });
   },
   post: function post(url) {
@@ -88508,23 +88511,21 @@ var apiService = {
     return axios__WEBPACK_IMPORTED_MODULE_0___default()({
       method: 'post',
       url: url,
-      data: data //headers: headers()
-
+      data: data,
+      headers: headers()
     });
   }
 };
-/* function headers() {
-    const currentUser = authenticationService.currentUserValue || {};
-    const authHeader = currentUser.token
-        /? { Authorization: "Bearer " + currentUser.token }
-        : {};
-    return {
-            ...authHeader,
-            "Content-Type": "application/json"
-        }
-         
-    
-} */
+
+function headers() {
+  var currentUser = _authentication_service__WEBPACK_IMPORTED_MODULE_1__["authenticationService"].currentUserValue || {};
+  var authHeader = currentUser.token ? {
+    Authorization: "Bearer " + currentUser.token
+  } : {};
+  return _objectSpread(_objectSpread({}, authHeader), {}, {
+    "Content-Type": "application/json"
+  });
+}
 
 /***/ }),
 

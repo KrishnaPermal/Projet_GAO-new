@@ -1,5 +1,5 @@
 import Axios from "axios"
-//import { authenticationService } from './authentication.service';
+import { authenticationService } from './authentication.service';
 
 export const apiService = {
     get(url, data = {}) {
@@ -7,7 +7,7 @@ export const apiService = {
             method: 'get',
             url: url,
             params: data, 
-            //headers: headers()
+            headers: headers()
 
         })
     },
@@ -16,16 +16,16 @@ export const apiService = {
             method: 'post',
             url: url,
             data: data, 
-            //headers: headers()
+            headers: headers()
 
         })
     },
 }
 
-/* function headers() {
+function headers() {
     const currentUser = authenticationService.currentUserValue || {};
     const authHeader = currentUser.token
-        /? { Authorization: "Bearer " + currentUser.token }
+        ? { Authorization: "Bearer " + currentUser.token }
         : {};
     return {
             ...authHeader,
@@ -33,4 +33,4 @@ export const apiService = {
         }
          
     
-} */
+} 
