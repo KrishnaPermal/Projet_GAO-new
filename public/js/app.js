@@ -28767,14 +28767,16 @@ var render = function() {
             "v-toolbar-items",
             { staticClass: "hidden-sm-and-down" },
             [
-              _c(
-                "v-btn",
-                {
-                  staticClass: "nav-item nav-link",
-                  attrs: { text: "", to: "/" }
-                },
-                [_vm._v("Accueil")]
-              ),
+              _vm.isAdmin
+                ? _c(
+                    "v-btn",
+                    {
+                      staticClass: "nav-item nav-link",
+                      attrs: { text: "", to: "/" }
+                    },
+                    [_vm._v("Accueil")]
+                  )
+                : _vm._e(),
               _vm._v(" "),
               _c("Menu")
             ],
@@ -28834,35 +28836,37 @@ var render = function() {
             "v-list",
             { attrs: { rounded: "" } },
             [
-              _c(
-                "v-list-item",
-                { attrs: { link: "" } },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-home")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
+              _vm.isAdmin
+                ? _c(
+                    "v-list-item",
+                    { attrs: { link: "" } },
                     [
                       _c(
-                        "v-list-item-title",
-                        { staticClass: "font-weight-bold" },
+                        "v-list-item-icon",
+                        [_c("v-icon", [_vm._v("mdi-home")])],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item-content",
                         [
-                          _c("router-link", { attrs: { to: "/" } }, [
-                            _vm._v("Accueil")
-                          ])
+                          _c(
+                            "v-list-item-title",
+                            { staticClass: "font-weight-bold" },
+                            [
+                              _c("router-link", { attrs: { to: "/" } }, [
+                                _vm._v("Accueil")
+                              ])
+                            ],
+                            1
+                          )
                         ],
                         1
                       )
                     ],
                     1
                   )
-                ],
-                1
-              ),
+                : _vm._e(),
               _vm._v(" "),
               _c("v-divider"),
               _vm._v(" "),

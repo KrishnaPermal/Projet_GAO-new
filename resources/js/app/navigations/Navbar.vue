@@ -22,7 +22,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text class="nav-item nav-link" to="/">Accueil</v-btn>
+        <v-btn  v-if="isAdmin" text class="nav-item nav-link" to="/">Accueil</v-btn>
         <Menu></Menu>
       </v-toolbar-items>
     </v-app-bar>
@@ -54,7 +54,7 @@
       <v-divider></v-divider>
 
       <v-list rounded>
-        <v-list-item link>
+        <v-list-item link v-if="isAdmin">
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
