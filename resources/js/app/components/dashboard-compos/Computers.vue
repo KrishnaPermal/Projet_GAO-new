@@ -10,7 +10,6 @@
           outlined
           color="cyan lighten-4"
         >
-          
           <v-img
             :aspect-ratio="16 / 9"
             src="https://www.universite-rose-croix.org/wp-content/uploads/2018/12/video-informatique-et-spiritualit%C3%A9.jpg"
@@ -18,12 +17,15 @@
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           >
             <v-card-title>{{ computer.name }}</v-card-title>
-            <deleteComputer :computer="computer" />
+            <v-card-actions>
+              <v-btn outlined rounded text>
+                <deleteComputer :computer="computer" />
+              </v-btn>
+            </v-card-actions>
           </v-img>
           <v-list-item three-line>
             <v-list-item-content>
-              <v-list-item-title class="headline mb-1 text-center">
-                <deleteComputer :computer="computer" /></v-list-item-title>
+              <v-list-item-title class="headline mb-1 text-center"></v-list-item-title>
               <v-row>
                 <v-col md="4">Heure</v-col>
                 <v-col md="4" class="text-center">Nom</v-col>
@@ -62,3 +64,17 @@
 </template>
 
 <script src='./computer.js' />
+
+<style scoped>
+.v-card {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.v-card:not(.on-hover) {
+  opacity: 0.6;
+}
+
+.show-btns {
+  color: rgba(255, 255, 255, 0.281) !important;
+}
+</style>
