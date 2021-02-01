@@ -20,7 +20,7 @@
     "dependencies": {
         "rxjs": "^6.6.3",
         "vue": "^2.6.12",
-        "vue-router": "^3.4.9",
-        "vuetify": "^2.3.21"
+        "vue-router": "^3.5.1",
+        "vuetify": "^2.4.3"
     }
 }
